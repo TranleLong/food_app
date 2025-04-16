@@ -22,4 +22,9 @@
         android:name="due.giuaky.food_app.ui.notifications.NotificationsFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="due.giuaky.food_app.ui.notifications.NotificationsFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_notifications" />
 </navigation>
