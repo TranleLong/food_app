@@ -20,6 +20,6 @@
     <fragment
         android:id="@+id/navigation_notifications"
         android:name="due.giuaky.food_app.ui.notifications.NotificationsFragment"
-        android:label="@string/title_notifications"
+        android:label="Thay đổi"
         tools:layout="@layout/fragment_notifications" />
 </navigation>
