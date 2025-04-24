@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/login_fragment">
+    app:startDestination="@+id/view">
 
     <fragment
         android:id="@+id/navigation_home"
@@ -37,4 +37,10 @@
             android:id="@+id/action_login_fragment_to_navigation_home"
             app:destination="@id/navigation_home" />
     </fragment>
+
+    <fragment
+        android:id="@+id/view"
+        android:name="due.giuaky.food_app.RestaurantListFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_restaurant_list" />
 </navigation>

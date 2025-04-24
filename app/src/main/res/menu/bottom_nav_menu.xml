@@ -19,5 +19,9 @@
         android:id="@+id/navigation_search"
         android:icon="@drawable/ic_notifications_black_24dp"
         android:title="Search" />
+    <item
+        android:id="@+id/view"
+        android:icon="@drawable/ic_notifications_black_24dp"
+        android:title="Menu" />
 
 </menu>
