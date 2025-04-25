@@ -72,24 +72,24 @@ public class HomeFragment extends Fragment implements FoodAdapter.OnItemClickLis
 
     private void initFoodData() {
         foodList = new ArrayList<>();
-        foodList.add(new Food(1, "Krispy Creme", "Krispy Creme Donut", "5$", R.drawable.bread));
-        foodList.add(new Food(2, "Mario Raisins", "Rice Bowl, Pasta", "8$", R.drawable.bread));
-        foodList.add(new Food(3, "Burger King", "Burger, Fast Food", "6$", R.drawable.bread));
-        foodList.add(new Food(4, "Pizza Hut", "Pizza, Italian", "10$", R.drawable.bread));
+        foodList.add(new Food(1, "Krispy Creme", "Krispy Creme Donut", "5$", R.drawable.cake4));
+        foodList.add(new Food(2, "Mario Raisins", "Rice Bowl, Pasta", "8$", R.drawable.rice));
+        foodList.add(new Food(3, "Burger King", "Burger, Fast Food", "6$", R.drawable.cake));
+        foodList.add(new Food(4, "Pizza Hut", "Pizza, Italian", "10$", R.drawable.cake10));
     }
 
     private void initFeaturedRestaurantData() {
         featuredRestaurantList = new ArrayList<>();
-        featuredRestaurantList.add(new Restaurant(1, "McDonald's", "Fast Food • Burger • Chicken", "25min", "Free", 4.5f, R.drawable.bread));
-        featuredRestaurantList.add(new Restaurant(2, "The Halal Guy", "Middle Eastern • Halal • Rice", "30min", "15.000đ", 4.7f, R.drawable.bread));
-        featuredRestaurantList.add(new Restaurant(3, "KFC", "Fast Food • Chicken • Burger", "20min", "Free", 4.3f, R.drawable.bread));
+        featuredRestaurantList.add(new Restaurant(1, "McDonald's", "Fast Food • Burger • Chicken", "25min", "Free", 4.5f, R.drawable.strawbery));
+        featuredRestaurantList.add(new Restaurant(2, "The Halal Guy", "Middle Eastern • Halal • Rice", "30min", "15.000đ", 4.7f, R.drawable.cake6));
+        featuredRestaurantList.add(new Restaurant(3, "KFC", "Fast Food • Chicken • Burger", "20min", "Free", 4.3f, R.drawable.cake7));
     }
 
     private void initAllRestaurantData() {
         allRestaurantList = new ArrayList<>();
-        allRestaurantList.add(new Restaurant("McDonald's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.bread));
-        allRestaurantList.add(new Restaurant("Cafe Bircher's", "American", "Salad food", "30min", "Free", 4.7f, R.drawable.bread));
-        allRestaurantList.add(new Restaurant("KFC Foods", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.bread));
+        allRestaurantList.add(new Restaurant("McDonald's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake8));
+        allRestaurantList.add(new Restaurant("Cafe Bircher's", "American", "Salad food", "30min", "Free", 4.7f, R.drawable.cake4));
+        allRestaurantList.add(new Restaurant("KFC Foods", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake5));
     }
 
     @Override
