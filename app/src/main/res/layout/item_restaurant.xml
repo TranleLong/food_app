@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    app:cardCornerRadius="12dp"
+    app:cardCornerRadius="16dp"
     app:cardElevation="2dp">
 
     <LinearLayout
@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        <!-- Restaurant Image -->
+        <!-- Restaurant Image with Overlay -->
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="180dp">
@@ -23,27 +23,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
-                android:contentDescription="abc" />
+                android:contentDescription="@string/restaurant_image_description" />
+
+            <!-- Removing gradient overlay and using solid color instead -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_gravity="bottom"
+                android:background="#80000000" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:background="#80000000"
                 android:orientation="horizontal"
                 android:padding="8dp">
 
                 <LinearLayout
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:src="@drawable/watch"
-                        android:contentDescription="abx" />
+                        android:contentDescription="@string/delivery_time_icon"
+                        app:tint="@color/white" />
 
                     <TextView
                         android:id="@+id/tvDeliveryTime"
@@ -58,13 +65,16 @@
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginStart="16dp"
+                    android:gravity="center_vertical">
 
                     <ImageView
                         android:layout_width="16dp"
                         android:layout_height="16dp"
                         android:src="@drawable/watch"
-                        android:contentDescription="100" />
+                        android:contentDescription="@string/delivery_fee_icon"
+                        app:tint="@color/white" />
 
                     <TextView
                         android:id="@+id/tvPrice"
@@ -76,12 +86,17 @@
                         android:textSize="12sp" />
                 </LinearLayout>
 
+                <!-- Using layout_weight to push rating to the right -->
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+
                 <TextView
                     android:id="@+id/tvRating"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:background="@drawable/watch"
+                    android:background="@drawable/rating_background"
                     android:paddingHorizontal="8dp"
                     android:paddingVertical="2dp"
                     android:text="4.5"
@@ -96,34 +111,41 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:padding="8dp">
+            android:padding="12dp">
 
             <TextView
                 android:id="@+id/tvRestaurantName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Restaurant Name"
-                android:textColor="@color/black"
+                android:text="Tacos Nanchas"
+                android:textColor="@color/text_primary"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end" />
 
+            <!-- Making cuisine types invisible since they're not in the image -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_marginTop="4dp"
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/tvCuisineType1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Chinese"
+                    android:textColor="@color/text_secondary"
                     android:textSize="14sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginHorizontal="4dp"
+                    android:layout_marginHorizontal="6dp"
                     android:text="•"
+                    android:textColor="@color/text_secondary"
                     android:textSize="14sp" />
 
                 <TextView
@@ -131,6 +153,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="American"
+                    android:textColor="@color/text_secondary"
                     android:textSize="14sp" />
             </LinearLayout>
         </LinearLayout>
