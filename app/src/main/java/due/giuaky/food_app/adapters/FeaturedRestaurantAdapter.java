@@ -15,7 +15,7 @@ import java.util.List;
 import due.giuaky.food_app.R;
 import due.giuaky.food_app.models.Restaurant;
 
-public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.RestaurantViewHolder> {
+public class FeaturedRestaurantAdapter extends RecyclerView.Adapter<FeaturedRestaurantAdapter.RestaurantViewHolder> {
 
     private Context context;
     private List<Restaurant> restaurantList;
@@ -25,7 +25,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         void onItemClick(Restaurant restaurant, int position);
     }
 
-    public RestaurantAdapter(Context context, List<Restaurant> restaurantList, OnItemClickListener listener) {
+    public FeaturedRestaurantAdapter(Context context, List<Restaurant> restaurantList, OnItemClickListener listener) {
         this.context = context;
         this.restaurantList = restaurantList;
         this.listener = listener;
@@ -34,7 +34,7 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
     @NonNull
     @Override
     public RestaurantViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_restaurant, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.item_featured_restaurant, parent, false);
         return new RestaurantViewHolder(view);
     }
 
@@ -43,10 +43,9 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
         Restaurant restaurant = restaurantList.get(position);
 
         holder.tvRestaurantName.setText(restaurant.getName());
-        holder.tvCuisineType1.setText(restaurant.getCuisineType1());
-        holder.tvCuisineType2.setText(restaurant.getCuisineType2());
+        holder.tvRestaurantDescription.setText(restaurant.getDescription());
         holder.tvDeliveryTime.setText(restaurant.getDeliveryTime());
-        holder.tvPrice.setText(restaurant.getPrice());
+        holder.tvDeliveryFee.setText(restaurant.getPrice());
         holder.tvRating.setText(String.valueOf(restaurant.getRating()));
         holder.ivRestaurantImage.setImageResource(restaurant.getImageResourceId());
 
@@ -64,16 +63,15 @@ public class RestaurantAdapter extends RecyclerView.Adapter<RestaurantAdapter.Re
 
     public static class RestaurantViewHolder extends RecyclerView.ViewHolder {
         ImageView ivRestaurantImage;
-        TextView tvRestaurantName, tvCuisineType1, tvCuisineType2, tvDeliveryTime, tvPrice, tvRating;
+        TextView tvRestaurantName, tvRestaurantDescription, tvDeliveryTime, tvDeliveryFee, tvRating;
 
         public RestaurantViewHolder(@NonNull View itemView) {
             super(itemView);
             ivRestaurantImage = itemView.findViewById(R.id.ivRestaurantImage);
             tvRestaurantName = itemView.findViewById(R.id.tvRestaurantName);
-            tvCuisineType1 = itemView.findViewById(R.id.tvCuisineType1);
-            tvCuisineType2 = itemView.findViewById(R.id.tvCuisineType2);
+            tvRestaurantDescription = itemView.findViewById(R.id.tvRestaurantDescription);
             tvDeliveryTime = itemView.findViewById(R.id.tvDeliveryTime);
-            tvPrice = itemView.findViewById(R.id.tvPrice);
+            tvDeliveryFee = itemView.findViewById(R.id.tvDeliveryFee);
             tvRating = itemView.findViewById(R.id.tvRating);
         }
     }

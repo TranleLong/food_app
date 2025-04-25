@@ -8,4 +8,5 @@
     <string name="restaurant_image_description">Restaurant image</string>
     <string name="delivery_time_icon">Delivery time icon</string>
     <string name="delivery_fee_icon">Delivery fee icon</string>
+
 </resources>

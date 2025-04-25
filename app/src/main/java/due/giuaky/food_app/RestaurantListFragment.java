@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import due.giuaky.food_app.R;
 import due.giuaky.food_app.adapters.RestaurantAdapter;
-import com.example.delingon.model.Restaurant;
+import due.giuaky.food_app.models.Restaurant;
 
 import java.util.ArrayList;
 import java.util.List;
