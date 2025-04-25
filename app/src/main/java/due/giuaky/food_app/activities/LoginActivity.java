@@ -54,16 +54,19 @@ public class LoginActivity extends Fragment {
 
         // Xử lý sự kiện click vào đăng ký
         tvRegister.setOnClickListener(v -> {
-            Toast.makeText(requireContext(), "Chức năng đăng ký sẽ được phát triển sau", Toast.LENGTH_SHORT).show();
+            // Chuyển đến màn hình đăng ký
+            Navigation.findNavController(view).navigate(R.id.action_login_fragment_to_register_fragment);
         });
 
-        // Xử lý sự kiện click vào quên mật khẩu
+        // Thay thế đoạn code xử lý sự kiện click vào quên mật khẩu trong LoginActivity.java
         tvForgotPassword.setOnClickListener(v -> {
-            Toast.makeText(requireContext(), "Chức năng quên mật khẩu sẽ được phát triển sau", Toast.LENGTH_SHORT).show();
+            // Chuyển đến màn hình quên mật khẩu
+            Navigation.findNavController(view).navigate(R.id.action_login_fragment_to_forgot_password_fragment);
         });
 
         return view;
     }
+
 
     private void loginUser(View view) {
         String email = etEmail.getText().toString().trim();

@@ -28,13 +28,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Đăng nhập"
+                android:text="Tạo tài khoản"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:textColor="#212121"
                 android:gravity="center"
-                android:layout_marginBottom="32dp"
+                android:layout_marginBottom="8dp"
                 android:letterSpacing="0.05" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nhập tên, email và mật khẩu của bạn để đăng ký"
+                android:textSize="14sp"
+                android:textColor="#757575"
+                android:gravity="center"
+                android:layout_marginBottom="24dp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -45,9 +54,30 @@
                 android:elevation="4dp">
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilFullName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="20dp"
+                    android:layout_marginBottom="16dp"
+                    app:boxStrokeColor="#FF9800"
+                    app:hintTextColor="#FF9800"
+                    app:startIconDrawable="@drawable/ic_person"
+                    app:startIconTint="#FF9800"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                    <EditText
+                        android:id="@+id/etFullName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Họ và tên"
+                        android:inputType="textPersonName"
+                        android:padding="16dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
                     app:boxStrokeColor="#FF9800"
                     app:hintTextColor="#FF9800"
                     app:startIconDrawable="@drawable/ic_email"
@@ -64,9 +94,10 @@
                 </com.google.android.material.textfield.TextInputLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginBottom="16dp"
+                    android:layout_marginBottom="24dp"
                     app:boxStrokeColor="#FF9800"
                     app:hintTextColor="#FF9800"
                     app:passwordToggleEnabled="true"
@@ -84,22 +115,11 @@
                         android:padding="16dp" />
                 </com.google.android.material.textfield.TextInputLayout>
 
-                <TextView
-                    android:id="@+id/tvForgotPassword"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Quên mật khẩu?"
-                    android:textColor="#FF9800"
-                    android:textSize="14sp"
-                    android:layout_gravity="end"
-                    android:layout_marginBottom="24dp"
-                    android:padding="4dp" />
-
                 <com.google.android.material.button.MaterialButton
-                    android:id="@+id/btnLogin"
+                    android:id="@+id/btnRegister"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
-                    android:text="Đăng nhập"
+                    android:text="ĐĂNG KÝ"
                     android:textColor="@android:color/white"
                     android:textSize="16sp"
                     android:textStyle="bold"
@@ -117,50 +137,33 @@
                 android:gravity="center"
                 android:layout_marginTop="32dp">
 
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"
-                    android:background="#E0E0E0" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="hoặc"
-                    android:textColor="#757575"
-                    android:layout_marginHorizontal="16dp" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="1dp"
-                    android:layout_weight="1"
-                    android:background="#E0E0E0" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="32dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Chưa có tài khoản? "
+                    android:text="Đã có tài khoản? "
                     android:textSize="15sp"
                     android:textColor="#757575" />
 
                 <TextView
-                    android:id="@+id/tvRegister"
+                    android:id="@+id/tvLogin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Đăng ký"
+                    android:text="Đăng nhập"
                     android:textColor="#FF9800"
                     android:textStyle="bold"
                     android:textSize="15sp"
                     android:padding="4dp" />
             </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:gravity="center"
+                android:text="Để đăng ký bạn đồng ý với Điều khoản &amp; Chính sách quyền riêng tư của chúng tôi."
+                android:textSize="12sp"
+                android:textColor="#757575"
+                android:paddingHorizontal="16dp" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>

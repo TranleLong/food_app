@@ -31,11 +31,18 @@
     <fragment
         android:id="@+id/login_fragment"
         android:name="due.giuaky.food_app.activities.LoginActivity"
-        android:label="Search"
-        tools:layout="@layout/activity_login" >
+        android:label="Đăng nhập"
+        tools:layout="@layout/activity_login">
         <action
             android:id="@+id/action_login_fragment_to_navigation_home"
             app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_login_fragment_to_register_fragment"
+            app:destination="@id/register_fragment" />
+        <!-- Các action khác của login_fragment -->
+        <action
+            android:id="@+id/action_login_fragment_to_forgot_password_fragment"
+            app:destination="@id/forgot_password_fragment" />
     </fragment>
 
     <fragment
@@ -43,4 +50,49 @@
         android:name="due.giuaky.food_app.RestaurantListFragment"
         android:label="Search"
         tools:layout="@layout/fragment_restaurant_list" />
+
+    <fragment
+        android:id="@+id/register_fragment"
+        android:name="due.giuaky.food_app.activities.RegisterFragment"
+        android:label="Đăng ký"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_register_fragment_to_login_fragment"
+            app:destination="@id/login_fragment" />
+    </fragment>
+
+    <!-- Thêm đoạn này vào file mobile_navigation.xml -->
+    <!-- Định nghĩa fragment forgot_password_fragment một lần duy nhất -->
+    <fragment
+        android:id="@+id/forgot_password_fragment"
+        android:name="due.giuaky.food_app.activities.ForgotPasswordFragment"
+        android:label="Quên mật khẩu"
+        tools:layout="@layout/fragment_forgot_password">
+        <action
+            android:id="@+id/action_forgot_password_fragment_to_verification_code_fragment"
+            app:destination="@id/verification_code_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/verification_code_fragment"
+        android:name="due.giuaky.food_app.activities.VerificationCodeFragment"
+        android:label="Xác nhận mã"
+        tools:layout="@layout/fragment_verification_code">
+        <action
+            android:id="@+id/action_verification_code_fragment_to_reset_password_fragment"
+            app:destination="@id/reset_password_fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reset_password_fragment"
+        android:name="due.giuaky.food_app.activities.ResetPasswordFragment"
+        android:label="Đặt lại mật khẩu"
+        tools:layout="@layout/fragment_reset_password">
+        <action
+            android:id="@+id/action_reset_password_fragment_to_login_fragment"
+            app:destination="@id/login_fragment"
+            app:popUpTo="@id/login_fragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
 </navigation>
