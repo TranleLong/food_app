@@ -50,17 +50,17 @@ public class RestaurantListFragment extends Fragment implements RestaurantAdapte
 
         // Thêm dữ liệu mẫu
         restaurantList.add(new Restaurant("Tacos Nanchas", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.bread));
-        restaurantList.add(new Restaurant("McDonald's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
-        restaurantList.add(new Restaurant("KFC Foods", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
-        restaurantList.add(new Restaurant("Cafe MayField's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
-        restaurantList.add(new Restaurant("Burger King", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
-        restaurantList.add(new Restaurant("Coffee House", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
-        restaurantList.add(new Restaurant("Tacos Nanchas", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
-        restaurantList.add(new Restaurant("McDonald's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
-        restaurantList.add(new Restaurant("KFC Foods", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
-        restaurantList.add(new Restaurant("Cafe MayField's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
-        restaurantList.add(new Restaurant("Burger King", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
-        restaurantList.add(new Restaurant("Coffee House", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
+        restaurantList.add(new Restaurant("McDonald's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake));
+        restaurantList.add(new Restaurant("KFC Foods", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.rice));
+        restaurantList.add(new Restaurant("Cafe MayField's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake2));
+        restaurantList.add(new Restaurant("Burger King", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake3));
+        restaurantList.add(new Restaurant("Coffee House", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake4));
+        restaurantList.add(new Restaurant("Tacos Nanchas", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake5));
+        restaurantList.add(new Restaurant("McDonald's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake6));
+        restaurantList.add(new Restaurant("KFC Foods", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake7));
+        restaurantList.add(new Restaurant("Cafe MayField's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake8));
+        restaurantList.add(new Restaurant("Burger King", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake9));
+        restaurantList.add(new Restaurant("Coffee House", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.cake10));
     }
 
     @Override
