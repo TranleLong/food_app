@@ -49,7 +49,7 @@ public class RestaurantListFragment extends Fragment implements RestaurantAdapte
         restaurantList = new ArrayList<>();
 
         // Thêm dữ liệu mẫu
-        restaurantList.add(new Restaurant("Tacos Nanchas", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
+        restaurantList.add(new Restaurant("Tacos Nanchas", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.bread));
         restaurantList.add(new Restaurant("McDonald's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
         restaurantList.add(new Restaurant("KFC Foods", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
         restaurantList.add(new Restaurant("Cafe MayField's", "Chinese", "American", "25min", "Free", 4.5f, R.drawable.watch));
