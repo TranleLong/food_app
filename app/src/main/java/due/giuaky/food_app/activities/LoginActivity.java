@@ -1,48 +1,97 @@
 package due.giuaky.food_app.activities;
+
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import due.giuaky.food_app.R;
-import due.giuaky.food_app.ui.home.HomeFragment;
 
 public class LoginActivity extends Fragment {
 
-    private EditText emailInput, passwordInput;
-    private Button loginButton;
+    private EditText etEmail, etPassword;
+    private Button btnLogin;
+    private TextView tvRegister, tvForgotPassword;
 
+    // Demo credentials
+    private static final String DEMO_EMAIL = "user@example.com";
+    private static final String DEMO_PASSWORD = "password";
+
+    // SharedPreferences for saving login state
+    private SharedPreferences sharedPreferences;
+    private static final String PREF_NAME = "LoginPrefs";
+    private static final String KEY_IS_LOGGED_IN = "isLoggedIn";
+
+    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        View rootView = inflater.inflate(R.layout.activity_login, container, false);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.activity_login, container, false);
 
-        emailInput = rootView.findViewById(R.id.email_input);
-        passwordInput = rootView.findViewById(R.id.password_input);
-        loginButton = rootView.findViewById(R.id.login_button);
+        // Khởi tạo SharedPreferences
+        sharedPreferences = requireActivity().getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
 
-        loginButton.setOnClickListener(v -> loginUser());
+        // Ánh xạ các view
+        etEmail = view.findViewById(R.id.etEmail);
+        etPassword = view.findViewById(R.id.etPassword);
+        btnLogin = view.findViewById(R.id.btnLogin);
+        tvRegister = view.findViewById(R.id.tvRegister);
+        tvForgotPassword = view.findViewById(R.id.tvForgotPassword);
 
-        return rootView;
+        // Xử lý sự kiện click nút đăng nhập
+        btnLogin.setOnClickListener(v -> loginUser(view));
+
+        // Xử lý sự kiện click vào đăng ký
+        tvRegister.setOnClickListener(v -> {
+            Toast.makeText(requireContext(), "Chức năng đăng ký sẽ được phát triển sau", Toast.LENGTH_SHORT).show();
+        });
+
+        // Xử lý sự kiện click vào quên mật khẩu
+        tvForgotPassword.setOnClickListener(v -> {
+            Toast.makeText(requireContext(), "Chức năng quên mật khẩu sẽ được phát triển sau", Toast.LENGTH_SHORT).show();
+        });
+
+        return view;
     }
 
-    private void loginUser() {
-        String email = emailInput.getText().toString().trim();
-        String password = passwordInput.getText().toString().trim();
+    private void loginUser(View view) {
+        String email = etEmail.getText().toString().trim();
+        String password = etPassword.getText().toString().trim();
 
-        // Kiểm tra tài khoản (chỉ là ví dụ, cần tích hợp hệ thống xác thực)
-        if (email.equals("user@example.com") && password.equals("password123")) {
-            // Chuyển tới màn hình chính sau khi đăng nhập thành công
-            // Giả sử chuyển hướng đến MainActivity (có thể dùng Fragment hoặc Activity tùy trường hợp)
-            getActivity().getSupportFragmentManager().beginTransaction()
-                    .replace(R.id.navigation_home, new HomeFragment()) // MainFragment phải được tạo sẵn
-                    .commit();
+        // Kiểm tra email
+        if (TextUtils.isEmpty(email)) {
+            etEmail.setError("Vui lòng nhập email");
+            return;
+        }
+
+        // Kiểm tra password
+        if (TextUtils.isEmpty(password)) {
+            etPassword.setError("Vui lòng nhập mật khẩu");
+            return;
+        }
+
+        // Kiểm tra thông tin đăng nhập (demo)
+        if (email.equals(DEMO_EMAIL) && password.equals(DEMO_PASSWORD)) {
+            // Lưu trạng thái đăng nhập
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean(KEY_IS_LOGGED_IN, true);
+            editor.apply();
+
+            // Chuyển đến Home Fragment
+            Navigation.findNavController(view).navigate(R.id.action_login_fragment_to_navigation_home);
         } else {
-            Toast.makeText(getContext(), "Đăng nhập thất bại", Toast.LENGTH_SHORT).show();
+            Toast.makeText(requireContext(), "Email hoặc mật khẩu không đúng", Toast.LENGTH_SHORT).show();
         }
     }
 }
